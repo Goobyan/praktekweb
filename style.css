@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(73, 197, 187);
+    align-content: center;
+}
+
+.profil {
+    font-style: oblique;
+    width: 550px ;
+    margin: 10px auto;
+    padding: 10px ;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px;
+    text-align: center;
+}
+
+.profil img {
+    width: 200px;
+}
+
+.profil a{
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 900;
+    color: black;
+    text-shadow: 3px 2px 7px black;
+    text-decoration: solid;
+}
+
+.profil button{
+    width: 100 auto;
+    border-radius: 10px;
+    background-color: rgb(218, 90, 90);
+    box-shadow: 3px 3px 2px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
