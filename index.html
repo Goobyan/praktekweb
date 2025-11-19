@@ -1,18 +1,255 @@
-<!DOCTYPE>
-<html>
-    <head>
-        <title>Welcome Gengss !</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="profil">
-            <img src="2c9ceb0bbf87b5feca8534d0bf16bbdb.jpg" height="90 "alt="Photo Profil">
-            <h1>Wayan Hanif Putra Pratama</h1>
-            <p>Saya adalah siswa dari SMAN 1 Kota Probolinggo. Kali ini saya sedang belajar membuat sebuah website. Website ini mungkin masih sederhana karena saya masih belajar.</p>
-            <a href="https://www.instagram.com/iam._haiiro28" target="blank" rel="noopenner noreferrer"> @Iam._Haiiro28</a>
-            <p></p>
-            <button id="Trakter">Trakteer</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>School Photobooth Digital Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <div class="nav">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="png/LOGO.png" alt="Logo SPCHub" >
+                </div> 
+                <div class="logo-text">SPCHub</div>
+            </div>
+            <div class="nav-items">
+                <div class="nav-icon" onclick="showScreen('home-screen')">
+                    <img src="png/home.png" alt="Home">
+                </div>
+                <div class="nav-icon" onclick="showScreen('admin-screen')">
+                    <img src="png/calendar-clock.png" alt="Antrian">
+                </div>
+                <div class="nav-icon" onclick="showScreen('redeem-screen')">
+                    <img src="png/password-alt.png" alt="Kode Redeem">
+                </div>
+            </div>
         </div>
-        <script src="script.js"></script>
-    </body>
+
+        <div class="main-content">
+            <!-- Home Screen -->
+            <div id="home-screen" class="screen active">
+                <div class="container">
+                    <div class="hero">
+                        <div class="hero-overlay"></div>
+                        <div class="hero-content">
+                            <h1 class="hero-title">Photobooth By SPC</h1>
+                            <p class="hero-subtitle">Capture, share, and cherish your school memories with our digital photobooth experience.</p>
+                            <button class="btn btn-primary" onclick="showScreen('register-screen')">DAFTARKAN DIRIMU</button>
+                        </div>
+                    </div>
+                    <h2 style="margin-bottom: 24px; text-align: center; color: var(--navy-blue);">Alur Photobooth</h2>
+                    <div class="features">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="png/edit.png">
+                            </div>
+                            <h3 class="feature-title">Daftar</h3>
+                            <p class="feature-description">Datfarkan dirimu kepada admin</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="png/mode-portrait.png">
+                            </div>
+                            <h3 class="feature-title">Senyum</h3>
+                            <p class="feature-description">Tersenyumlah ke kamera</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="png/social-network.png">
+                            </div>
+                            <h3 class="feature-title">Pilih</h3>
+                            <p class="feature-description">Pilih foto terbaikmu untuk dicetak</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="png/picture.png">
+                            </div>
+                            <h3 class="feature-title">Terima</h3>
+                            <p class="feature-description">Terima hasil foto cetak terbaikmu</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin: 40px 0;">
+                        <button class="btn btn-primary" onclick="showScreen('register-screen')">AYO DAFTAR</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Registration Screen -->
+<div id="register-screen" class="screen">
+    <div class="container">
+        <div style="display: flex; align-items: center; margin-bottom: 24px;">
+            <div class="nav-icon" onclick="showScreen('home-screen')">
+                <img src="png/cross-small.png">
+            </div>
+            <h2 style="color: var(--navy-blue);">Pesan Fotomu</h2>
+        </div>
+        
+        <form id="registration-form">
+            <div class="form-container">
+                <h3 class="form-title">Lengkapi Datamu</h3>
+                <div class="form-group">
+                    <label class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-input" placeholder="Masukkan Nama Lengkapmu">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Kelas</label>
+                    <input type="text" class="form-input" placeholder="Masukkan Kelasmu ">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Nomor Whatsapp</label>
+                    <input type="text" class="form-input" placeholder="Masukkan Nomor Teleponmu">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Pilihan Cetak</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="strip" name="printOption" class="radio-input" checked>
+                            <label for="strip">3 Foto Strip</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="large" name="printOption" class="radio-input">
+                            <label for="large">1 Foto Besar</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-secondary">DAFTARKAN DIRIMU</button>
+            </div>
+        </form> </div>
+</div>
+            
+            <!-- Admin Dashboard Screen -->
+            <div id="admin-screen" class="screen">
+                <div class="container">
+                    <div style="display: flex; align-items: center; margin-bottom: 24px;">
+                        <div class="nav-icon" onclick="showScreen('home-screen')" style="margin-right: 16px;"><i class="fas fa-arrow-left"></i></div>
+                        <h2 style="color: var(--navy-blue);">Admin Check-in</h2>
+                    </div>
+                    
+                    <div class="admin-container">
+                        <div class="admin-header">
+                            <h3 class="admin-title">Registrations</h3>
+                            <div class="search-bar">
+                                <input type="text" class="search-input" placeholder="Enter Registration Code">
+                                <button class="search-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                        
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Name</th>
+                                        <th>Class</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A1B2</td>
+                                        <td>Sarah Johnson</td>
+                                        <td>10A</td>
+                                        <td><span class="status-badge">PENDING</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>C3D4</td>
+                                        <td>Michael Lee</td>
+                                        <td>11B</td>
+                                        <td><span class="status-badge status-checked-in">CHECKED IN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>E5F6</td>
+                                        <td>Emma Watson</td>
+                                        <td>12C</td>
+                                        <td><span class="status-badge">PENDING</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>G7H8</td>
+                                        <td>David Kim</td>
+                                        <td>9B</td>
+                                        <td><span class="status-badge status-checked-in">CHECKED IN</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>I9J0</td>
+                                        <td>Sophia Martinez</td>
+                                        <td>10C</td>
+                                        <td><span class="status-badge">PENDING</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="redeem-screen" class="screen">
+                <div class="container">
+                    <div class="form-container">
+                        <h1>Redeem Kode</h1>
+                            <p>Masukkan kode yang Anda terima untuk mendapatkan nomor antrian</p>
+                            <form id="redeem-form">
+                                <div class="form-group">
+                                    <input type="text" id="redeem-code" class="form-input" placeholder="Masukkan kode redeem" required> 
+                                </div>
+                                <button type="submit" id="redeem-btn" class="btn btn-primary" disabled>REDEEM</button>
+                            </form>
+                            <div id="message-output" class="message-output"></div>
+                            <button id="back-to-home-btn" class="btn btn-secondary" onclick="showScreen('home-screen')">Kembali ke Home</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="payment-screen" class="screen">
+    <div class="container">
+        <div style="display: flex; align-items: center; margin-bottom: 24px;">
+            <div class="nav-icon" onclick="showScreen('register-screen')">
+                <img src="png/cross-small.png">
+            </div>
+            <h2 style="color: var(--navy-blue);">Pembayaran</h2>
+        </div>
+        
+        <div class="centered-content">
+            <div class="payment-container">
+                <h1>Pembayaran QRIS</h1>
+                
+                <p>Scan kode QRIS di bawah ini untuk melakukan pembayaran</p>
+                
+                <div class="qris-container">
+                    <img src="png/qris-sementara.jpeg" alt="QRIS Payment" class="qris-image"> 
+                </div>
+                
+                <div class="payment-instructions">
+                    <h3>Instruksi Pembayaran:</h3>
+                    <ol>
+                        <li>Buka aplikasi mobile banking atau e-wallet Anda</li>
+                        <li>Pilih fitur scan QRIS</li>
+                        <li>Arahkan kamera ke kode QR di atas</li>
+                        <li>Konfirmasi jumlah pembayaran</li>
+                        <li>Selesaikan transaksi</li>
+                    </ol>
+                </div>
+                
+                <button id="confirm-payment-btn" class="btn btn-primary">
+                SAYA SUDAH MEMBAYAR & KIRIM BUKTI
+                </button>
+                <button id="back-to-register-btn" class="btn btn-secondary" onclick="showScreen('register-screen')">
+                Kembali ke Registrasi
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+        
+        <div class="footer">
+            <p>© 2025 SMASA Photo Cinema - SMA Negeri 1 Kota Probolinggo</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
